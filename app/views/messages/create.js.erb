@@ -1,4 +1,4 @@
-<% broadcast 'messages/new' do %>
+<% broadcast '/messages/new' do %>
   $('#messages').append("<%= escape_javascript render(@message)%>");s
 <% end %>
 
