@@ -1,0 +1,4 @@
+<div id="<%= dom_id(@message) %>">
+  <strong>Some Jerk Said:</strong> <%= @message.body %>
+  <%= link_to "[x]", message_path(@message), :method => :delete, :remote => true %>
+</div>
