@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120523161423) do
 
   create_table "messages", :force => true do |t|
     t.string   "handle"
-    t.text     "message"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
