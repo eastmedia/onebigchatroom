@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  handle: MyString
+  message: MyText
+
+two:
+  handle: MyString
+  message: MyText
