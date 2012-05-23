@@ -4,3 +4,13 @@
 <%= form_for :message, :id => "new_message_form", :remote => true do |f| %>
   <%= f.text_field :body %> <%= f.submit "send" %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  // $(function(){
+    var faye = Faye.Client("http://localhost:9292/faye");
+    // console.log(faye);
+    // faye.subscribe("/messages/new", function(data){
+    //   eval(data);
+    // });
+  // })
+</script>

@@ -1,0 +1,1 @@
+faye_server: rackup faye.ru -s thin -E production

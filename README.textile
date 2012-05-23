@@ -1,0 +1,4 @@
+== One Big Chat Room
+
+Use foreman in the dev environment to start up the faye server.
+So run ```>foreman start```
