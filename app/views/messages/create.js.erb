@@ -1,5 +1,6 @@
 <% broadcast '/messages/new' do %>
   $('#messages').append("<%= escape_javascript render(@message)%>");
+  play_new();
 <% end %>
 
 $('form')[0].reset()
