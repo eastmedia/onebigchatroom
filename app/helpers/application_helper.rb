@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def faye_host
-     Rails.env.production? ? "ec2-50-19-225-177.compute-1.amazonaws.com" : "localhost"
+     Rails.env.production? ? "onebigchatroom.com" : "localhost"
   end
 
   def broadcast(channel, &block)
