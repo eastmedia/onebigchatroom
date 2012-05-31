@@ -113,6 +113,11 @@ h1 b {
     padding: .5em .3em;
     margin-top: .3em;
     border: none;
+    &:focus {
+      background: $grey;
+      color: lighten($grey, 60%);
+      outline: none;
+    }
   }
   input[type='submit'] {
     background: lighten($yellow, 20%);
