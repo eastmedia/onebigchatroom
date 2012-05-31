@@ -1,0 +1,5 @@
+<%= form_for :handle, :url => handles_path do |f| %>
+  <%= f.label :body, "Pick a nickname" %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>

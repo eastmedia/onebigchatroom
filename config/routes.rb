@@ -3,6 +3,7 @@ Onebigchatroom::Application.routes.draw do
   # first created -> highest priority.
 
   resources :messages, :only => [:new, :create, :index, :destroy]
+  resources :handles
 
   match '/chat' => 'messages#index'
   # Sample of regular route:
