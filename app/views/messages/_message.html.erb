@@ -1,4 +1,6 @@
 <div id="<%= dom_id(@message) %>">
-  <strong><%= @message.handle %></strong> <%= format_message @message.body %>
-  <%= link_to "[x]", message_path(@message), :method => :delete, :remote => true %>
+  <span id="<%= dom_id(@message, "shakable_content") %>">
+    <strong><%= @message.handle %></strong> <%= format_message @message.body %>
+    <%= link_to "[x]", message_path(@message), :method => :delete, :remote => true %>
+  </span>
 </div>
