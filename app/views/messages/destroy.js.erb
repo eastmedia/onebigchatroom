@@ -1,4 +1,9 @@
 <% broadcast '/messages/destroy' do %>
-  play_delete();
-  $("#<%= dom_id(@message)%>").html("THIS MESSAGE WAS DELETED BY '<%= @message.handle %>'")
+  var deleted_message = $("#<%= dom_id(@message)%>");
+
+  if (deleted_message) {
+    play_delete();
+    deleted_message.html("THIS MESSAGE WAS DELETED BY '<%= @message.handle %>'")
+  }
+
 <% end %>

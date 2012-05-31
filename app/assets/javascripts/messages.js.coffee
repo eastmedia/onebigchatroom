@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-@play_delete = () ->
-  delete_sound = new buzz.sound("/sounds/delete_message", {
-      formats: [ "ogg", "mp3"]
-  });
+delete_sound = new buzz.sound("/sounds/delete_message", {
+    formats: [ "ogg", "mp3"]
+});
 
+@play_delete = () ->
   delete_sound.play();
