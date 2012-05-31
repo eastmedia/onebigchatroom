@@ -10,5 +10,11 @@
     var faye = new Faye.Client("http://<%= faye_host %>:9292/faye");
     faye.subscribe("/messages/new", function(data){ eval(data); });
     faye.subscribe("/messages/destroy", function(data){ eval(data); });
+
+    var mySound = new buzz.sound("/sounds/intro", {
+        formats: [ "ogg", "mp3"]
+    });
+
+    mySound.play();
   })
 </script>
