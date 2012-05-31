@@ -12,11 +12,13 @@
  *= require_tree .
 */
 
+/*** colors ***/
 $red:     #C31010;
 $yellow:  #EDD50B;
 $grey:    #484f48;
 
 
+/*** custom fonts ***/
 @font-face {
 	font-family: 'os-regular';
 	src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
@@ -64,33 +66,32 @@ h1 {
   display: inline-block;
   vertical-align: top;
   background: $red;
-  padding: .3em 1em .4em 1em;
-  margin-bottom: 1em;
   color: lighten($yellow, 5%);
+  margin-bottom: 1em;
+  padding: .3em 1em .4em 1em;
   font-family: "os-bold";
   text-shadow: 0 -1px 0 darken($red, 30%);
   border-left: 10px solid $yellow;
   border-bottom: 10px solid $yellow;
-}
-
-h1 b {
-  position: absolute;
-  left: 60px;
-  bottom: -29px;
-  display: inline-block;
-  background: url(carrot_red.png) no-repeat;
-  width: 50px;
-  height: 29px;
+  b {
+    position: absolute;
+    display: inline-block;
+    left: 60px;
+    bottom: -29px;
+    background: url(carrot_red.png) no-repeat;
+    width: 50px;
+    height: 29px;
+  }
 }
 
 .tagline {
   display: inline-block;
   vertical-align: top;
   margin-top: 1em;
+  margin-left: 1.5em;
   font-size: 1em;
   font-family: "os-semibold";
   width: 57%;
-  margin-left: 1.5em;
   line-height: 1.8em;
   
 }
