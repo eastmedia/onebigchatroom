@@ -8,10 +8,11 @@ gem 'rails', '3.2.0'
 gem 'mysql2'
 gem 'thin'
 gem 'faye'
-gem 'foreman'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem "ruby-debug19"
+  gem 'foreman'
 end
 
 # Gems used only for assets and not required
