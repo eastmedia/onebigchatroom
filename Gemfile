@@ -6,6 +6,7 @@ gem 'thin'
 gem 'faye'
 gem 'jquery-rails'
 gem 'rest_in_place'
+gem 'rails_autolink'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

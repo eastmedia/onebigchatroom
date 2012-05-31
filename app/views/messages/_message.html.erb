@@ -1,4 +1,4 @@
 <div id="<%= dom_id(@message) %>">
-  <strong><%= @message.handle %></strong> <%= @message.body %>
+  <strong><%= @message.handle %></strong> <%= format_message @message.body %>
   <%= link_to "[x]", message_path(@message), :method => :delete, :remote => true %>
 </div>
