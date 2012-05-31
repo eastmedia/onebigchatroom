@@ -1,6 +1,10 @@
 <h2>Messages</h2>
 <div id="messages"></div>
 
+<span class="rest-in-place" data-url="/handles/pft" data-object="handle" data-attribute="body">
+  <%= session[:handle] %>
+</span>
+
 <%= form_for :message, :id => "new_message_form", :remote => true do |f| %>
   <%= f.text_field :body %> <%= f.submit "send" %>
 <% end %>

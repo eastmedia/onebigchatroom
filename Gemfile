@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'thin'
 gem 'faye'
 gem 'jquery-rails'
+gem 'rest_in_place'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
