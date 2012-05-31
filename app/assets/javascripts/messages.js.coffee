@@ -14,7 +14,15 @@ new_message_sound_2 = new buzz.sound("sounds/new_message2", {
   formats: ["ogg", "mp3"]
 });
 
-queue = [new_message_sound_1, new_message_sound_2]
+new_message_sound_3 = new buzz.sound("sounds/new_message3", {
+  formats: ["ogg", "mp3"]
+});
+
+new_message_sound_4 = new buzz.sound("sounds/new_message4", {
+  formats: ["ogg", "mp3"]
+});
+
+queue = [new_message_sound_1, new_message_sound_2, new_message_sound_3, new_message_sound_4]
 
 #   Functions
 shuffle = (arr) ->
