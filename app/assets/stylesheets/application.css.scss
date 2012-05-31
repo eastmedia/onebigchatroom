@@ -44,7 +44,10 @@ $grey:    #484f48;
   
 body { 
   background: url(bg.png) repeat-y #f6f6f6; 
-  font-family: "os-regular";
+  font: normal normal 1em/1.7em "os-regular", serif;
+  color: $grey;
+  border: 0;
+  padding: 0;
 }
 
 .application {
@@ -52,12 +55,16 @@ body {
   margin: 0 auto;
 }
 
+header {
+  margin-top: 1em;
+}
+
 h1 {
   position: relative;
   display: inline-block;
+  vertical-align: top;
   background: $red;
   padding: .3em 1em .4em 1em;
-  margin-top: 1em;
   margin-bottom: 1em;
   color: lighten($yellow, 5%);
   font-family: "os-bold";
@@ -76,27 +83,54 @@ h1 b {
   height: 29px;
 }
 
+.tagline {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1em;
+  font-size: 1em;
+  font-family: "os-semibold";
+  width: 57%;
+  margin-left: 1.5em;
+  line-height: 1.8em;
+  
+}
+
 .pickit {
-  margin-top: 3em;
+  margin-top: 5em;
   background: $yellow;
+  color: $grey;
   padding: .7em 1em;
+  border-left: 10px solid $grey;
+  border-bottom: 10px solid $grey;
+  label {
+    display: inline-block;
+    margin: .5em 0;
+    text-shadow: 0 1px 0 lighten($yellow, 40%);
+  }
   input[type='text'] {
-    width: 98.5%;
+    width: 98.8%;
     font-size: 1.4em;
     padding: .5em .3em;
-    margin-left: .1em;
     margin-top: .3em;
     border: none;
   }
   input[type='submit'] {
-    background: $grey;
-    color: #FFF;
-    border: none;
+    background: lighten($yellow, 20%);
+    color: $grey;
+    font-family: "os-bold";
+    border: 1px dotted #FFF;
     font-size: 14px;
     padding: .7em 1em;
-    margin: .5em 0 1em 0;
-    border-left: 3px solid darken($grey, 20%);
-    border-bottom: 3px solid darken($grey, 20%);
+    margin: 1em 0 1em 0;
     width: 100%;
+  }
+}
+
+footer {
+  margin-top: 6em;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $red;
   }
 }
