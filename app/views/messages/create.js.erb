@@ -8,7 +8,7 @@
     dirty_word_continer.trigger('startRumble');
   <% end %>
 
-  <% ["stephen", "ross"].each do |dudes_name| %>
+  <% ["stephen", "ross", "eastmedia"].each do |dudes_name| %>
     <% if @message.body.downcase.include?(dudes_name) %>
       person_appears("<%= dudes_name %>");
       <% break %>
