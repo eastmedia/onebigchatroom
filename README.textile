@@ -2,3 +2,10 @@
 
 Use foreman in the dev environment to start up the faye server.
 So run ```>foreman start```
+
+
+== Running Faye in Production
+
+We are being dumb/pragmatic and running it on port 443 for now because EY has port 9292 blocked.
+We should also look into a good way to start / stop on deploy instead of periodically
+having to log into the server and run @nohup sudo bundle exec thin start -R faye.ru -p 443 2> /dev/null &@**
