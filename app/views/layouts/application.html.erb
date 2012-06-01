@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>onebigchatroom</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application", "http://#{faye_host}/faye.js" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="application">
-    <header>
-      <h1>One Big Chat Room<b></b></h1>
-      <span class="tagline">autolysis hydrometer malt extract top-fermenting yeast, priming malt. krug beer filter fermentation, "dry hopping amber lager. units of bitterness keg." </span>
-    </header>
 
-    <%= yield %>
-  </div>
+  <head>
+    <title>onebigchatroom</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application", "http://#{faye_host}/faye.js" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  <footer>
-    <p>Built during the <a href="http://eastmedia.com">Eastmedia</a> hackathon by <a href="https://github.com/nodanaonlyzuul">nodanaonlyzuul</a> and <a href="https://github.com/pnts">pnts</a>.
-  </footer>
-</body>
+  <body>
+    <div class="application">
+      <header>
+        <h1>One Big Chat Room<b></b></h1>
+        <span class="tagline">autolysis hydrometer malt extract top-fermenting yeast, priming malt. krug beer filter fermentation, "dry hopping amber lager. units of bitterness keg." </span>
+      </header>
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>Built during the <a href="http://eastmedia.com">Eastmedia</a> hackathon by <a href="https://github.com/nodanaonlyzuul">nodanaonlyzuul</a> and <a href="https://github.com/pnts">pnts</a>.
+    </footer>
+    <%= render :partial => "shared/google_analytics" %>
+  </body>
 </html>
