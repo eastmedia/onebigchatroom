@@ -1,4 +1,5 @@
 <% broadcast '/messages/new' do %>
+  var easter_egg_sound = false;
 
   $('#messages').append("<%= escape_javascript render(@message)%>");
 
@@ -10,14 +11,19 @@
 
   <% ["stephen", "ross", "eastmedia", "pants"].each do |dudes_name| %>
     <% if @message.body.downcase.include?(dudes_name) %>
+      easter_egg_sound = true
       person_appears("<%= dudes_name %>");
       <% break %>
     <% end %>
-    window.scrollTo(0, $("#messages").height());
+  <% end %>
 
+  window.scrollTo(0, $("#messages").height());
+
+  if (!easter_egg_sound){
     play_new();
+  }
 
-<% end %>
+
 <% end %>
 
 $('form')[0].reset()
