@@ -50,10 +50,15 @@ body {
   color: $grey;
   border: 0;
   padding: 0;
+  margin: 0;
 }
 
-a {
+a, input[type=submit] {
   text-decoration: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .application {
@@ -150,6 +155,10 @@ footer {
   }
 }
 
+#messages {
+  margin-bottom: 15em;
+}
+
 .message {
   display: block;
   width: 730px;
@@ -164,9 +173,9 @@ footer {
   border-left: 10px solid rgb(205, 205, 205);
   border-bottom: 10px solid rgb(205, 205, 205);
   p {
-    font-size: 1.4em;
-    line-height: 1.6em;
-    margin: .5em;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin: .8em .5em 1.2em .5em;
   }
   a {
     color: lighten($grey, 40%);
@@ -196,4 +205,57 @@ footer {
       background: $yellow;
       margin: .8em 0 0 7.5em;
     }
+}
+
+.create {
+  position: fixed;
+  bottom: 0;
+  background: $yellow;
+  width: 100%;
+  padding-bottom: 1.3em;
+  border-top: 10px solid lighten($grey, 20%);
+  .rest-in-place {
+    margin-left: 120px;
+    span {
+      font-size: .6em;
+    }
+  }
+  form {
+    position: relative;
+    width: 730px;
+    textarea {
+      margin-top: 2em;  
+      width: 96.3%;
+      border: 0;
+      font-size: 14px;
+      height: 4em;
+      padding: 1em;
+      &:focus {
+        outline: none;
+      }
+    }
+    b {
+      position: absolute;
+      display: inline-block;
+      left: 60px;
+      bottom: -20px;
+      background: url(carrot_white.png) no-repeat;
+      width: 56px;
+      height: 30px;
+    }
+    input {
+      float: right;
+      background: $grey;
+      color: #FFF;
+      border: none;
+      font-family: "os-regular";
+      font-size: 14px;
+      padding: .4em 1em;
+      margin: 0;
+      &:hover {
+        cursor: pointer;
+        background: darken($grey, 20%);
+      }
+    }
+  }
 }

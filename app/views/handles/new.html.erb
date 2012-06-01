@@ -1,5 +1,11 @@
- <%= form_for :handle, :url => handles_path, :html => {:class => "pickit"} do |f| %>
+<%= form_for :handle, :url => handles_path, :html => {:class => "pickit"} do |f| %>
   <%= f.label :body, "Pick a nickname. Don't worry, you can change it. A lot. Come to think of it, you'll probably want to..." %>
   <%= f.text_field :body %>
   <%= f.submit %>
+<% end %>
+
+<% content_for :credits do %>
+  <footer>
+    <p>Built during the <a href="http://eastmedia.com">Eastmedia</a> hackathon by <a href="https://github.com/nodanaonlyzuul">nodanaonlyzuul</a> and <a href="https://github.com/pnts">pnts</a>.
+  </footer>
 <% end %>
