@@ -1,4 +1,5 @@
 <% broadcast '/messages/new' do %>
+
   $('#messages').append("<%= escape_javascript render(@message)%>");
   <% if ProfanityFilter::Base.profane?(@message.body) %>
     var dirty_word_continer = $("#<%= dom_id(@message, 'shakable_content') %>");
@@ -6,12 +7,14 @@
     dirty_word_continer.trigger('startRumble');
   <% end %>
 
-  <% if @message.body.downcase.include?("stephen") %>
-    stephen_appears();
-  <% end %>
+  <% ["stephen", "ross"].each do |dudes_name| %>
+    <% if @message.body.downcase.include?(dudes_name) %>
+      person_appears("<%= dudes_name %>");
+      <% break %>
+    <% end %>
 
-  play_new();
+    play_new();
+
 <% end %>
-
-
+<% end %>
 $('form')[0].reset()
