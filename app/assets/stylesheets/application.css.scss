@@ -220,7 +220,14 @@ footer {
       font-size: .6em;
     }
   }
-  form {
+  .rest-in-place input {
+    background: lighten($yellow, 20%);
+    outline: none;
+    border: none;
+    font-family: "os-regular";
+    font-size: .95em;
+  }
+  form.chat {
     position: relative;
     width: 730px;
     textarea {

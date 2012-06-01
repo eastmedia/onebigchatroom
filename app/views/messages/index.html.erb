@@ -8,7 +8,7 @@
 <% content_for :message_input do %>
 <div class="create">  
   <div class="application">
-    <%= form_for :message, :id => "new_message_form", :remote => true do |f| %>
+    <%= form_for :message, :id => "new_message_form", :remote => true, :html => {:class => "chat"} do |f| %>
       <%= f.text_area :body %><b></b> <%= f.submit "Say it!" %>
     <% end %>
     <span class="rest-in-place" data-url="/handles/pft" data-object="handle" data-attribute="body">
