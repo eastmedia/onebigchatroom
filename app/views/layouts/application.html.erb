@@ -13,11 +13,14 @@
   <div class="application">
     <header>
       <h1>One Big Chat Room<b></b></h1>
-      <span class="tagline">autolysis hydrometer malt extract top-fermenting yeast, priming malt. krug beer filter fermentation, "dry hopping amber lager. units of bitterness keg." </span>
+      <span class="tagline">
+        New and elegant means, applied to the end of fun and experimentation. <br/>
+        It beats writing ColdFusion apps.
+      </span>
     </header>
-    
+
     <%= yield %>
-    
+
     <% if sidebar = yield(:sidebar) -%>
       <%= sidebar -%>
     <% end %>
@@ -31,7 +34,7 @@
   <% if credits = yield(:credits) -%>
     <%= credits -%>
   <% end %>
-  
+
   <%= render :partial => "shared/google_analytics" %>
 </body>
 </html>
