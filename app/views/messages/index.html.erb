@@ -27,5 +27,12 @@
     });
 
     mySound.play();
+
+    $("#message_body").keyup(function(e){
+      if (e.keyCode === 13 && $("#message_body").val().trim() != "") {
+         $("form.chat").submit();
+       }
+    });
+
   })
 </script>
