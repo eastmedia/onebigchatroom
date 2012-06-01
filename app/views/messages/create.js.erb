@@ -1,6 +1,7 @@
 <% broadcast '/messages/new' do %>
 
   $('#messages').append("<%= escape_javascript render(@message)%>");
+
   <% if ProfanityFilter::Base.profane?(@message.body) %>
     var dirty_word_continer = $("#<%= dom_id(@message, 'shakable_content') %>");
     dirty_word_continer.jrumble();
@@ -12,6 +13,7 @@
       person_appears("<%= dudes_name %>");
       <% break %>
     <% end %>
+    window.scrollTo(0, $("#messages").height());
 
     play_new();
 
