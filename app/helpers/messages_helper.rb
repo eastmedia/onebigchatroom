@@ -7,7 +7,7 @@ module MessagesHelper
       return_string <<  image_tag("#{name}.jpg", :id => "#{name}_pic")
       return_string <<  "</div>"
     end
-    "dicks" + return_string
+    return_string
   end
 
   def format_message(message)
