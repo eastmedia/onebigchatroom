@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
 
-  <head>
-    <title>onebigchatroom</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application", "http://#{faye_host}/faye.js" %>
-    <%= csrf_meta_tags %>
-  </head>
+<head>
+  <title>onebigchatroom</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application", "http://#{faye_host}/faye.js" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-    <div class="application">
-      <header>
-        <h1>One Big Chat Room<b></b></h1>
-        <span class="tagline">autolysis hydrometer malt extract top-fermenting yeast, priming malt. krug beer filter fermentation, "dry hopping amber lager. units of bitterness keg." </span>
-      </header>
-      <%= yield %>
-    </div>
+<body>
+  <div class="application">
+    <header>
+      <h1>One Big Chat Room<b></b></h1>
+      <span class="tagline">autolysis hydrometer malt extract top-fermenting yeast, priming malt. krug beer filter fermentation, "dry hopping amber lager. units of bitterness keg." </span>
+    </header>
+    
+    <%= yield %>
+  </div>
 
-    <footer>
-      <p>Built during the <a href="http://eastmedia.com">Eastmedia</a> hackathon by <a href="https://github.com/nodanaonlyzuul">nodanaonlyzuul</a> and <a href="https://github.com/pnts">pnts</a>.
-    </footer>
-    <%= render :partial => "shared/google_analytics" %>
-  </body>
+
+  <% if message_input = yield(:message_input) -%>
+    <%= message_input -%>
+  <% end %>
+
+  <% if credits = yield(:credits) -%>
+    <%= credits -%>
+  <% end %>
+  
+  <%= render :partial => "shared/google_analytics" %>
+</body>
 </html>

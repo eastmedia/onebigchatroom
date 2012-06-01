@@ -1,14 +1,6 @@
 
 <div id="messages"></div>
 
-<span class="rest-in-place" data-url="/handles/pft" data-object="handle" data-attribute="body">
-  <%= session[:handle] %>
-</span>
-
-<%= form_for :message, :id => "new_message_form", :remote => true do |f| %>
-  <%= f.text_field :body %> <%= f.submit "send" %>
-<% end %>
-
 <div id="ross" style="position:fixed;display:none;top:30%;left:35%">
   <%= image_tag "ross.jpg", :id => "ross_pic" %>
 </div>
@@ -16,6 +8,19 @@
 <div id="stephen" style="position:fixed;display:none;top:30%;left:35%">
   <%= image_tag "stephen.jpg", :id => "stephen_pic" %>
 </div>
+
+<% content_for :message_input do %>
+<div class="create">
+  <div class="application">
+    <%= form_for :message, :id => "new_message_form", :remote => true, :html => {:class => "chat"} do |f| %>
+      <%= f.text_area :body %><b></b> <%= f.submit "Say it!" %>
+    <% end %>
+    <span class="rest-in-place" data-url="/handles/pft" data-object="handle" data-attribute="body">
+      <%= session[:handle] %>
+    </span>
+  </div>
+</div>
+<% end %>
 
 <script type="text/javascript" charset="utf-8">
   $(function(){
