@@ -1,6 +1,8 @@
-<div id="<%= dom_id(@message) %>">
+<div id="<%= dom_id(@message) %>" class="message">
   <span id="<%= dom_id(@message, "shakable_content") %>">
-    <strong><%= @message.handle %></strong> <%= format_message @message.body %>
-    <%= link_to "[x]", message_path(@message), :method => :delete, :remote => true %>
-  </span>
+  <div class="single">
+    <%= link_to "delete this message like an asshole", message_path(@message), :method => :delete, :remote => true, :class => "delete" %>
+    <p><%= format_message @message.body %></p>
+  </div>
+  <div class="handle"><span><%= @message.handle %></span></handle>
 </div>

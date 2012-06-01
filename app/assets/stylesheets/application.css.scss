@@ -52,6 +52,10 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .application {
   width: 1024px;
   margin: 0 auto;
@@ -144,4 +148,42 @@ footer {
     text-decoration: none;
     color: $red;
   }
+}
+
+.message {
+  display: block;
+  width: 730px;
+  margin: 2em 0;
+}
+
+.single {
+  background: $grey;
+  color: #FFF;
+  padding: .5em 1em;
+  border-left: 10px solid rgb(205, 205, 205);
+  border-bottom: 10px solid rgb(205, 205, 205);
+  p {
+    font-size: 1.4em;
+    line-height: 2em;
+    margin: 0;
+  }
+  a {
+    color: lighten($grey, 40%);
+  }
+  a.delete {
+    display: block;
+    text-align: right;
+    margin-bottom: -.5em;
+    font-size: .8em;
+    padding-right: 1.4em;
+    background: url(close.png) right 9px no-repeat;
+  }
+}
+
+.handle {
+    span { display: inline-block;
+      padding: .2em .6em;
+      background: $yellow;
+      
+    }
 }
