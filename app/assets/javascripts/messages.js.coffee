@@ -42,3 +42,12 @@ shuffle = (arr) ->
 
 @play_new = () ->
   shuffle(queue)[0].play();
+
+@stephen_appears = () ->
+  stephen_div = $("#stephen")
+  stephen_sound = new buzz.sound("sounds/stephen", { formats: ["ogg", "mp3"] })
+  stephen_sound.play()
+
+  stephen_div.show("slow", () ->
+    stephen_div.hide("slow"))
+

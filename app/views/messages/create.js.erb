@@ -5,6 +5,11 @@
     dirty_word_continer.jrumble();
     dirty_word_continer.trigger('startRumble');
   <% end %>
+
+  <% if @message.body.downcase.include?("stephen") %>
+    stephen_appears();
+  <% end %>
+
   play_new();
 <% end %>
 
