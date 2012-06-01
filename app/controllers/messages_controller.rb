@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:id])
+    @destroyer = session[:handle]
+    @message   = Message.find(params[:id])
     @message.destroy
   end
 end
