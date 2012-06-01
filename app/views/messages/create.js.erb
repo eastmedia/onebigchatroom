@@ -9,7 +9,7 @@
     dirty_word_continer.trigger('startRumble');
   <% end %>
 
-  <% ["stephen", "ross", "eastmedia", "pants", "jeff", "alison"].each do |dudes_name| %>
+  <% ["stephen", "ross", "eastmedia", "pants", "jeff", "alison", "brett"].each do |dudes_name| %>
     <% if @message.body.downcase.include?(dudes_name) %>
       easter_egg_sound = true
       person_appears("<%= dudes_name %>");
