@@ -157,6 +157,7 @@ footer {
 }
 
 .single {
+  position: relative;
   background: $grey;
   color: #FFF;
   padding: .5em 1em;
@@ -164,8 +165,8 @@ footer {
   border-bottom: 10px solid rgb(205, 205, 205);
   p {
     font-size: 1.4em;
-    line-height: 2em;
-    margin: 0;
+    line-height: 1.6em;
+    margin: .5em;
   }
   a {
     color: lighten($grey, 40%);
@@ -178,12 +179,21 @@ footer {
     padding-right: 1.4em;
     background: url(close.png) right 9px no-repeat;
   }
+  b {
+    position: absolute;
+    display: inline-block;
+    left: 60px;
+    bottom: -30px;
+    background: url(carrot_darkgrey.png) no-repeat;
+    width: 56px;
+    height: 30px;
+  }
 }
 
 .handle {
     span { display: inline-block;
       padding: .2em .6em;
       background: $yellow;
-      
+      margin: .8em 0 0 7.5em;
     }
 }
