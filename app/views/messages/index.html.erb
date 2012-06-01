@@ -1,13 +1,7 @@
 
 <div id="messages"></div>
 
-<div id="ross" style="position:fixed;display:none;top:30%;left:35%">
-  <%= image_tag "ross.jpg", :id => "ross_pic" %>
-</div>
-
-<div id="stephen" style="position:fixed;display:none;top:30%;left:35%">
-  <%= image_tag "stephen.jpg", :id => "stephen_pic" %>
-</div>
+<%= hidden_box_for("ross", "stephen").html_safe %>
 
 <% content_for :message_input do %>
 <div class="create">
