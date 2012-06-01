@@ -53,3 +53,16 @@ shuffle = (arr) ->
 
   person_div.show("fast")
   person_sound.play()
+
+
+@zeus_remove = () ->
+  zeus_div = $("#zeus")
+  zeus_sound = new buzz.sound("sounds/zeus", { formats: ["ogg", "mp3"] })
+
+  zeus_sound.bind("ended", ->
+    zeus_div.hide("fast")
+    $("#messages").html("")
+  )
+
+  zeus_div.show("fast")
+  zeus_sound.play()

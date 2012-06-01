@@ -26,5 +26,6 @@
 
 <% end %>
 
-$('form')[0].reset()
+if ($("div.message").length > 200) { zeus_remove(); };
+$('form')[0].reset();
 $("#message_body").focus();
