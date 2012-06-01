@@ -46,7 +46,10 @@ shuffle = (arr) ->
 @person_appears = (name) ->
   person_div = $("##{name}")
   person_sound = new buzz.sound("sounds/#{name}", { formats: ["ogg", "mp3"] })
-  person_sound.play()
 
-  person_div.show("slow", () ->
-    person_div.hide("slow"))
+  person_sound.bind("ended", ->
+    person_div.hide("fast")
+  )
+
+  person_div.show("fast")
+  person_sound.play()
