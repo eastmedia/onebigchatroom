@@ -3,7 +3,7 @@
 
   if (deleted_message) {
     play_delete();
-    deleted_message.html("THIS MESSAGE WAS DELETED BY '<%= @destroyer %>'")
+    deleted_message.html("<div class=\"deleted\">This message was deleted by the scoundrel <strong><%= @destroyer %></strong></div>")
   }
 
 <% end %>

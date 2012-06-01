@@ -267,3 +267,13 @@ footer {
     }
   }
 }
+
+.deleted {
+  background: $red;
+  color: #FFF;
+  padding: .3em .8em;
+  font-size: .8em;
+  strong {
+    font-family:  "os-semibold";
+  }
+}
