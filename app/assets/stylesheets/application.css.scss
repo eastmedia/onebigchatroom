@@ -283,6 +283,9 @@ footer {
 
 .sidebar {
   width: 250px;
+  z-index: 60;
+  position: fixed;
+  top: 135px;
   margin: 1em 0 0 2em;
   display: inline-block;
   vertical-align: top;
@@ -301,4 +304,34 @@ footer {
       color: $red;
     }
   }
+}
+
+.pow {
+  background: url(pow.png);
+  position: fixed;
+  bottom: 50px;
+  right: 135px;
+  z-index: 10000;
+  width: 295px;
+  height: 295px;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: pow;
+  opacity: 0;
+}
+
+@-webkit-keyframes pow {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fixed {
+  top: 0;
 }
