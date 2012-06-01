@@ -3,7 +3,7 @@ module MessagesHelper
   def hidden_box_for(*names)
     return_string = ""
     names.each do |name|
-      return_string << "<div id='#{name}' style='position:fixed;display:none;top:2%;left:35%'>"
+      return_string << "<div id='#{name}' style='position:fixed;display:none;top:2%;left:25%;z-index:9999'>"
       return_string <<  image_tag("#{name}.jpg", :id => "#{name}_pic")
       return_string <<  "</div>"
     end
