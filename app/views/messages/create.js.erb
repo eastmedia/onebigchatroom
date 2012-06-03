@@ -7,6 +7,7 @@
     var dirty_word_continer = $("#<%= dom_id(@message, 'shakable_content') %>");
     dirty_word_continer.jrumble();
     dirty_word_continer.trigger('startRumble');
+    setTimeout(function(){dirty_word_continer.trigger('stopRumble')},10000);
   <% end %>
 
   <% ["stephen", "ross", "eastmedia", "pants", "jeff", "alison", "brett"].each do |dudes_name| %>
