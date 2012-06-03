@@ -11,9 +11,9 @@ gem 'profanity_filter'
 
 group :development do
   gem 'engineyard', :require => false
+  gem 'foreman',    :require => false
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem "ruby-debug19"
-  gem 'foreman'
 end
 
 # Gems used only for assets and not required
