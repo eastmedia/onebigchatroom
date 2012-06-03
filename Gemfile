@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
 gem 'mysql2'
@@ -10,6 +10,7 @@ gem 'rails_autolink'
 gem 'profanity_filter'
 
 group :development do
+  gem 'engineyard', :require => false
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem "ruby-debug19"
   gem 'foreman'
