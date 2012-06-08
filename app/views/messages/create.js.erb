@@ -17,16 +17,16 @@
       <% break %>
     <% end %>
   <% end %>
-  
+
   var s = $(window).scrollTop();
   var d = $(document).height();
   var c = $(window).height();
   var scrollPercent = (s / (d-c)) * 100;
 
-  if (scrollPercent > 80){ 
-    window.scrollTo(0, $("#messages").height()); 
+  if (scrollPercent > 98){
+    window.scrollTo(0, $("#messages").height());
   }
-  
+
   if (!easter_egg_sound){
     play_new();
   }
