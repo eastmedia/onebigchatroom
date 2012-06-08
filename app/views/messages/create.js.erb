@@ -23,13 +23,16 @@
   var c = $(window).height();
   var scrollPercent = (s / (d-c)) * 100;
 
-  if (scrollPercent > 98){
+  if (scrollPercent > 90){
     window.scrollTo(0, $("#messages").height());
   }
 
   if (!easter_egg_sound){
     play_new();
   }
+
+  var images = $("a.autolinked")
+  $(images[images.length - 1]).trigger("messageadded")
 <% end %>
 
 if ($("div.message").length > 200) { zeus_remove(); };

@@ -66,3 +66,23 @@ shuffle = (arr) ->
 
   zeus_div.show("fast")
   zeus_sound.play()
+
+@safe_size = (imagetag) ->
+  if (imagetag.height() > 300)
+    imagetag.height(imagetag.height()/2)
+  if (imagetag.width() > 300)
+    imagetag.width(imagetag.width()/2)
+
+
+#  Transform anchor tags to images
+$("a.autolinked").live("messageadded", (event) ->
+  formats     = ['.jpg', '.jpeg', '.gif', '.png']
+  the_element = $(event.target)
+  the_href    = the_element.attr('href')
+
+  for format, i in formats
+    if the_href.indexOf(format) != -1
+      random_id = parseInt(Math.random()*4206969666).toString()
+      the_element.replaceWith("<a href='#{the_href}' target='_new'><img id='#{random_id}' src='#{the_href}'></img><a/>")
+      safe_size($("##{random_id}"))
+)

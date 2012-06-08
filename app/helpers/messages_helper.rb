@@ -11,6 +11,6 @@ module MessagesHelper
   end
 
   def format_message(message)
-    auto_link(simple_format(message), :html => {:target => "_blank"})
+    auto_link(simple_format(message), :html => {:target => "_blank", :class => "autolinked"})
   end
 end
