@@ -31,8 +31,10 @@
     play_new();
   }
 
-  var images = $("a.autolinked")
-  $(images[images.length - 1]).trigger("messageadded")
+  $("a.autolinked").each(
+    function(i,link){ $(link).trigger("messageadded") }
+  )
+
 <% end %>
 
 if ($("div.message").length > 200) { zeus_remove(); };
