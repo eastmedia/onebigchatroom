@@ -68,11 +68,11 @@ shuffle = (arr) ->
   zeus_sound.play()
 
 @safe_size = (imagetag) ->
-  if (imagetag.height() > 300)
-    imagetag.height(imagetag.height()/2)
-  if (imagetag.width() > 300)
-    imagetag.width(imagetag.width()/2)
-
+  if ((imagetag.height() <= 300) && (imagetag.width() <= 300))
+   #  done processing
+  else
+   imagetag.attr("height", ((imagetag.height() / 1.10)+"px"))
+   safe_size(imagetag)
 
 #  Transform anchor tags to images
 $("a.autolinked").live("messageadded", (event) ->
