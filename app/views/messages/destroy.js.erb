@@ -1,4 +1,6 @@
-<% broadcast '/messages/destroy' do %>
+<% channel = ((params[:room_id] && !params[:room_id].blank?) ? "/#{params[:room_id]}/" : "/") + "messages/destroy" %>
+
+<% broadcast channel do %>
   var deleted_message = $("#<%= dom_id(@message)%>");
 
   if (deleted_message) {
