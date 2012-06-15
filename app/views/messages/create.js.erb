@@ -1,4 +1,5 @@
-<% broadcast '/messages/new' do %>
+<% channel = (params[:room_id] ? "/#{params[:room_id]}/" : "/") + "messages/new" %>
+<% broadcast channel do %>
   var easter_egg_sound = false;
 
   $('#messages').append("<%= escape_javascript render(@message)%>");
@@ -34,7 +35,6 @@
   $("a.autolinked").each(
     function(i,link){ $(link).trigger("messageadded") }
   )
-
 <% end %>
 
 if ($("div.message").length > 200) { zeus_remove(); };

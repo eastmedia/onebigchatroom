@@ -5,7 +5,9 @@ module ApplicationHelper
   end
 
   def broadcast(channel, &block)
-    message = {:channel => channel, :data => capture(&block)}
+    puts channel
+    message = { :channel => channel, :data => capture(&block) }
+    require 'ruby-debug'; debugger
     uri     = URI.parse("http://#{faye_host}/faye")
     Net::HTTP.post_form(uri, :message => message.to_json)
   end
