@@ -317,10 +317,26 @@ footer {
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-name: pow;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-name: pow;
   opacity: 0;
 }
 
-@-webkit-keyframes pow {
+@-webkit-keyframes pow,
+ {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes pow {
   from {
     opacity: 0;
   }
