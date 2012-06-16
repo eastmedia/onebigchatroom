@@ -74,6 +74,15 @@ shuffle = (arr) ->
    imagetag.attr("height", ((imagetag.height() / 1.10)+"px"))
    safe_size(imagetag)
 
+@isScrolledIntoView = (elem) ->
+  docViewTop    = $(window).scrollTop();
+  docViewBottom = docViewTop + $(window).height();
+  elemTop       = $(elem).offset().top
+  elemBottom    = elemTop + $(elem).height()
+
+  (elemBottom <= docViewBottom) && (elemTop >= docViewTop)
+
+
 #  Transform anchor tags to images
 $("a.autolinked").live("messageadded", (event) ->
   formats     = ['.jpg', '.jpeg', '.gif', '.png']

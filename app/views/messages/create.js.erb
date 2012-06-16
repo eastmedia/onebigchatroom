@@ -19,13 +19,8 @@
     <% end %>
   <% end %>
 
-  var s = $(window).scrollTop();
-  var d = $(document).height();
-  var c = $(window).height();
-  var scrollPercent = (s / (d-c)) * 100;
-
-  if (scrollPercent > 90){
-    window.scrollTo(0, $("#messages").height());
+  if (isScrolledIntoView($("#message_<%= @message.id%>"))){
+    window.scrollTo(0, $(document).height());
   }
 
   if (!easter_egg_sound){
