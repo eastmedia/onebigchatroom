@@ -323,7 +323,8 @@ footer {
   opacity: 0;
 }
 
-@-webkit-keyframes pow {
+@-webkit-keyframes pow,
+ {
   from {
     opacity: 0;
   }
@@ -335,7 +336,7 @@ footer {
   }
 }
 
-@keyframes pow {
+@-moz-keyframes pow {
   from {
     opacity: 0;
   }
