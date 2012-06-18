@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
+  before_filter :require_handle
+
   def index
-    redirect_to root_path unless session[:handle]
+
   end
 
   def create

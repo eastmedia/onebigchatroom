@@ -5,7 +5,7 @@ class HandlesController < ApplicationController
 
   def create
     session[:handle] = params[:handle][:body]
-    redirect_to "/chat"
+    redirect_back_or_default "/chat"
   end
 
   def update

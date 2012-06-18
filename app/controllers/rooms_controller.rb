@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
+  before_filter :require_handle
+
   def show
-    redirect_to root_path unless session[:handle]
     render "/messages/index"
   end
 end
