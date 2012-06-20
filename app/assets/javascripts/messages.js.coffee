@@ -84,7 +84,7 @@ $("a.autolinked").live("messageadded", (event) ->
   for format, i in formats
     if the_href.indexOf(format) != -1
       random_id = parseInt(Math.random()*4206969666).toString()
-      the_element.replaceWith("<a href='#{the_href}' target='_new'><img id='#{random_id}' src='#{the_href}'></img><a/>")
+      the_element.replaceWith("<a href='#{the_href}' target='_new'><img id='#{random_id}' src='#{the_href}' class='imgz'></img></a>")
     else
       # this link won't be parsed again, so $("a.autolinked") won't pick it up. Good!
       the_element.removeClass("autolinked")
