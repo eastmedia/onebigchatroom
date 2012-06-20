@@ -67,13 +67,6 @@ shuffle = (arr) ->
   zeus_div.show("fast")
   zeus_sound.play()
 
-@safe_size = (imagetag) ->
-  if ((imagetag.height() <= 300) && (imagetag.width() <= 300))
-   #  done processing
-  else
-   imagetag.attr("height", ((imagetag.height() / 1.10)+"px"))
-   safe_size(imagetag)
-
 @isScrolledIntoView = (elem) ->
   docViewTop    = $(window).scrollTop();
   docViewBottom = docViewTop + $(window).height();
@@ -81,7 +74,6 @@ shuffle = (arr) ->
   elemBottom    = elemTop + $(elem).height()
 
   (elemBottom <= docViewBottom) && (elemTop >= docViewTop)
-
 
 #  Transform anchor tags to images
 $("a.autolinked").live("messageadded", (event) ->
@@ -93,7 +85,6 @@ $("a.autolinked").live("messageadded", (event) ->
     if the_href.indexOf(format) != -1
       random_id = parseInt(Math.random()*4206969666).toString()
       the_element.replaceWith("<a href='#{the_href}' target='_new'><img id='#{random_id}' src='#{the_href}'></img><a/>")
-      safe_size($("##{random_id}"))
     else
       # this link won't be parsed again, so $("a.autolinked") won't pick it up. Good!
       the_element.removeClass("autolinked")
