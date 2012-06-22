@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622174815) do
+ActiveRecord::Schema.define(:version => 20120622175657) do
 
   create_table "messages", :force => true do |t|
     t.string   "handle"
@@ -20,5 +20,8 @@ ActiveRecord::Schema.define(:version => 20120622174815) do
     t.datetime "updated_at", :null => false
     t.string   "deleted_by"
   end
+
+  add_index "messages", ["deleted_by"], :name => "index_messages_on_deleted_by"
+  add_index "messages", ["handle"], :name => "index_messages_on_handle"
 
 end
