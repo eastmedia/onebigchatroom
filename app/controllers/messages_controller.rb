@@ -6,8 +6,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message].merge({:handle => session[:handle]}))
-    @message.save
+    if (Message.where(["handle = ? AND created_at > ?", session[:handle], 1.minute.ago]).limit(30).count == 30)
+      render :js => "window.location = 'http://www.livinginternet.com/i/ia_nq.htm';"
+    else
+      @message = Message.new(params[:message].merge({:handle => session[:handle]}))
+      @message.save
+    end
   end
 
   def destroy
