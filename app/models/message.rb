@@ -7,6 +7,7 @@
 #  body       :text
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  deleted_by :string(255)
 #
 
 class Message < ActiveRecord::Base
