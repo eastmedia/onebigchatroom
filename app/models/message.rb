@@ -11,4 +11,5 @@
 #
 
 class Message < ActiveRecord::Base
+  scope :not_deleted, where("deleted_by IS NOT NULL")
 end
