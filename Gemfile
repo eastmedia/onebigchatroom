@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'rest_in_place'
 gem 'rails_autolink'
 gem 'profanity_filter'
+gem 'errplane'
 
 group :development do
   gem 'engineyard', :require => false
