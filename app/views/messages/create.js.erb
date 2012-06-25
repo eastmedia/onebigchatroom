@@ -1,4 +1,4 @@
-<% channel = ((params[:room_id] && !params[:room_id].blank?) ? "/#{params[:room_id]}/" : "/") + "messages/new" %>
+<% channel = "/#{params[:room_id]}/messages/new" %>
 <% broadcast channel do %>
   var easter_egg_sound = false;
 

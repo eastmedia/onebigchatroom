@@ -1,7 +1,12 @@
 <div id="<%= dom_id(@message) %>" class="message">
   <span id="<%= dom_id(@message, "shakable_content") %>">
   <div class="single">
-    <%= link_to "delete this message like an asshole", message_path(@message, (params[:room_id] && !params[:room_id].blank?) ? {:room_id => params[:room_id]} : {}), :method => :delete, :remote => true, :class => "delete" %>
+    <%= link_to "delete this message like an asshole",
+      room_message_path(params[:room_id], @message),
+      :method => :delete,
+      :remote => true,
+      :class  => "delete"
+    %>
     <p class="messagebody">
       <%= format_message @message.body %>
     </p>

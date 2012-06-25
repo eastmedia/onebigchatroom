@@ -2,11 +2,14 @@ Onebigchatroom::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :messages, :only => [:new, :create, :index, :destroy]
   resources :handles
 
-  match '/chat'     => 'messages#index'
+  resources :rooms do
+    resources :messages, :only => [:new, :create, :index, :destroy]
+  end
+
   match '/:room_id' => 'rooms#show'
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

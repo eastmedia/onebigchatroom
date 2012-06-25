@@ -15,8 +15,8 @@
 <body>
   <div class="application">
     <header>
-      <h1>One Big Chat Room <%= params[:room_id] ? "(#{params[:room_id]})" : ""  %><b></b></h1>
-      <% if !params[:room_id] %>
+      <h1>One Big Chat Room <%= params[:room_id] && params[:room_id] != 'chat' ? "(#{params[:room_id]})" : ""  %><b></b></h1>
+      <% if params[:room_id] == 'chat' %>
       <span class="tagline">
         New and elegant means, applied to the end of fun and experimentation. <br/>
         It beats writing ColdFusion apps.

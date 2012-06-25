@@ -1,4 +1,4 @@
-<% channel = ((params[:room_id] && !params[:room_id].blank?) ? "/#{params[:room_id]}/" : "/") + "messages/destroy" %>
+<% channel = "/#{params[:room_id]}/messages/destroy" %>
 
 <% broadcast channel do %>
   var deleted_message = $("#<%= dom_id(@message)%>");
@@ -7,5 +7,4 @@
     play_delete();
     deleted_message.html("<div class=\"pow\"></div><div class=\"deleted\">This message was deleted by the scoundrel <strong><%= @destroyer %></strong></div></div>")
   }
-
 <% end %>
