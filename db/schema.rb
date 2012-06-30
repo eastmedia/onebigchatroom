@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622193451) do
+ActiveRecord::Schema.define(:version => 20120630020301) do
+
+  create_table "heartbeats", :force => true do |t|
+    t.string   "session_id"
+    t.string   "room"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "heartbeats", ["session_id", "room"], :name => "index_heartbeats_on_session_id_and_room"
 
   create_table "messages", :force => true do |t|
     t.string   "handle"
