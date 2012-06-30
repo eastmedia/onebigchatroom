@@ -14,4 +14,5 @@ class Heartbeat < ActiveRecord::Base
   INTERVAL = 10000
 
   scope "recent", lambda { where(["updated_at >= ?", (Heartbeat::INTERVAL/1000).seconds.ago]) }
+  scope "old",    lambda { where(["updated_at < ?",  (Heartbeat::INTERVAL/1000).seconds.ago]) }
 end
