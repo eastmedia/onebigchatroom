@@ -6,6 +6,7 @@ Onebigchatroom::Application.routes.draw do
 
   resources :rooms do
     resources :messages, :only => [:new, :create, :index, :destroy]
+    resources :heartbeats, :only => [:create]
   end
 
   match '/:room_id' => 'rooms#show'
