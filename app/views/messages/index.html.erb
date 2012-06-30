@@ -51,3 +51,10 @@
 
   })
 </script>
+
+<!-- HEART BEAT STUFF...TODO: Extract out -->
+<script type="text/javascript" charset="utf-8">
+  var heartbeat_timer = window.setInterval(function(){
+    $.post("<%= room_heartbeats_path(params[:room_id])%>");
+  }, 5000);
+</script>
