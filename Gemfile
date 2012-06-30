@@ -13,7 +13,7 @@ gem 'errplane'
 group :development do
   gem 'engineyard', :require => false
   gem 'foreman',    :require => false
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'annotate',   :git => 'git://github.com/ctran/annotate_models.git'
   gem "ruby-debug19"
 end
 
