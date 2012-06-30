@@ -16,15 +16,21 @@
 
 <% content_for :message_input do %>
 <div class="create">
+
+  <span id="user_count" style="float:right">
+
+  </span>
+
   <div class="application">
     <%= form_for :message, :id => "new_message_form", :remote => true, :url => room_messages_path(params[:room_id]) , :html => {:class => "chat"} do |f| %>
       <%= f.text_area :body %><b></b> <%= f.submit "Say it!" %>
     <% end %>
-    <span class="rest-in-place" data-url="/handles/pft" data-object="handle" data-attribute="body">
+    <span class="rest-in-place" data-url="/handles/doesnothing" data-object="handle" data-attribute="body">
       <%= session[:handle] %>
     </span>
   </div>
 </div>
+
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
@@ -48,13 +54,14 @@
        }
     }).focus();
 
-
   })
 </script>
 
 <!-- HEART BEAT STUFF...TODO: Extract out -->
 <script type="text/javascript" charset="utf-8">
-  var heartbeat_timer = window.setInterval(function(){
-    $.post("<%= room_heartbeats_path(params[:room_id])%>");
-  }, 5000);
+  $(function(){
+    xbxrx("<%= room_heartbeats_path(params[:room_id])%>");
+    window.setInterval(function(){xbxrx("<%= room_heartbeats_path(params[:room_id])%>")}, <%=  Heartbeat::INTERVAL%>);
+  })
+
 </script>
