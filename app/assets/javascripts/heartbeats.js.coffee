@@ -5,7 +5,7 @@
       if (count > 1)
         phrase = "There are #{count} total people in this room"
       else
-        phrase = "You are along - invite people!"
+        phrase = "You are alone - invite people!"
 
       $("#user_count").html(phrase)
     );
