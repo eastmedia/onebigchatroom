@@ -11,16 +11,16 @@
     <p><strong>Rules of the game</strong><p>
     <p>The rules are: there are no rules! Just remember, whatever you do affects everyone else. So do it all!</p>
     <p class="credits">Created by <a href="http://github.com/nodanaonlyzuul">nodanaonlyzuul</a> and <a href="http://github.com/pnts">pnts</a> during the <a href="http://eastmedia.com">Eastmedia</a> hackathon.</p>
+    <p>
+      <strong>
+        <span id="user_count"></span>
+      </strong>
+    </p>
   </div>
 <% end %>
 
 <% content_for :message_input do %>
 <div class="create">
-
-  <span id="user_count" style="float:right">
-
-  </span>
-
   <div class="application">
     <%= form_for :message, :id => "new_message_form", :remote => true, :url => room_messages_path(params[:room_id]) , :html => {:class => "chat"} do |f| %>
       <%= f.text_area :body %><b></b> <%= f.submit "Say it!" %>
@@ -57,11 +57,10 @@
   })
 </script>
 
-<!-- HEART BEAT STUFF...TODO: Extract out -->
 <script type="text/javascript" charset="utf-8">
   $(function(){
     xbxrx("<%= room_heartbeats_path(params[:room_id])%>");
-    window.setInterval(function(){xbxrx("<%= room_heartbeats_path(params[:room_id])%>")}, <%=  Heartbeat::INTERVAL%>);
+    window.setInterval(function(){xbxrx("<%= room_heartbeats_path(params[:room_id])%>")}, <%= Heartbeat::INTERVAL %>);
   })
 
 </script>
