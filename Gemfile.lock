@@ -67,7 +67,10 @@ GEM
     engineyard-serverside-adapter (1.6.4)
       escape (~> 0.0.4)
       json_pure
-    errplane (0.2.4)
+    errplane (0.2.7)
+      actionpack (>= 2.3.14)
+      activesupport (>= 2.3.14)
+      json
     erubis (2.7.0)
     escape (0.0.4)
     eventmachine (1.0.0.beta.4)
