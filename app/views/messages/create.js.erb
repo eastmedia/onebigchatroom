@@ -23,16 +23,14 @@
     window.scrollTo(0, $(document).height());
   }
 
-  if (!easter_egg_sound){
-    play_new();
-  }
+  if (!easter_egg_sound){ play_new(); }
 
   $("a.autolinked").each( function(i,link) {
-    $(link).trigger("messageadded")
+    $(link).trigger("messageadded");
   })
 
   if (!WindowState.hasFocus) {
-    WindowState.unreadMessages = WindowState.unreadMessages+ 1;
+    WindowState.unreadMessages = WindowState.unreadMessages + 1;
     document.title = "onebigchatroom {"+ WindowState.unreadMessages +"}";
   }
 <% end %>
