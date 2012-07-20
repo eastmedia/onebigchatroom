@@ -13,7 +13,7 @@
 
   <% ["stephen", "ross", "eastmedia", "pants", "jeff", "alison", "brett", "josh"].each do |dudes_name| %>
     <% if @message.body.downcase.include?(dudes_name) %>
-      easter_egg_sound = true
+      easter_egg_sound = true;
       person_appears("<%= dudes_name %>");
       <% break %>
     <% end %>
