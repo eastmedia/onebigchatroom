@@ -39,6 +39,9 @@ module Onebigchatroom
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    # Password for publishing to the Faye server
+    config.faye_password = 'f7k5szf3t1qsz8y1py2g9cgsbtltoqy'
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
