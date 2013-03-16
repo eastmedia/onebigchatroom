@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def faye_host
-     Rails.env.production? ? "onebigchatroom.com:443" : "localhost:9292"
+     Rails.env.development? ? "localhost:9292" : "onebigchatroom.com:443"
   end
 
   def broadcast(channel, &block)
